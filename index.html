@@ -153,6 +153,18 @@
       padding-left: 16px;
       margin-bottom: 16px;
     }
+    .intro-img {
+      width: 100%; height: 240px;
+      object-fit: cover; border-radius: 12px;
+      margin-bottom: 16px;
+    }
+
+    /* ── SOCIETY CARDS with images ── */
+    .card-img {
+      width: 100%; height: 180px;
+      object-fit: cover; border-radius: 12px;
+      margin-bottom: 14px;
+    }
 
     /* ── PYRAMIDS ── */
     .pyramid-card {
@@ -386,6 +398,8 @@
       section { padding: 40px 0; }
       .section-title h2 { font-size: 26px; }
       .gallery-item img { height: 160px; }
+      .intro-img { height: 180px; }
+      .card-img { height: 140px; }
     }
   </style>
 </head>
@@ -420,11 +434,13 @@
     </div>
     <div class="grid-2">
       <div class="card">
+        <img class="intro-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Teotihuac%C3%A1n_from_the_pyramid_of_the_moon.jpg/640px-Teotihuac%C3%A1n_from_the_pyramid_of_the_moon.jpg" alt="Vista panor&aacute;mica de Teotihuac&aacute;n desde la Pir&aacute;mide de la Luna" />
         <p class="intro-highlight">Teotihuac&aacute;n significa &ldquo;el lugar donde nacen los dioses&rdquo; en n&aacute;huatl.</p>
         <p>La cultura teotihuacana se desarroll&oacute; entre los a&ntilde;os 100 a.C. y 650 d.C. en el Valle de M&eacute;xico. Su ciudad principal, Teotihuac&aacute;n, lleg&oacute; a tener m&aacute;s de <strong>100,000 habitantes</strong>, convirti&eacute;ndose en una de las urbes m&aacute;s grandes del mundo antiguo.</p>
         <p style="margin-top:10px">Fue un centro pol&iacute;tico, econ&oacute;mico y religioso que influy&oacute; en culturas como la maya, zapoteca y posteriormente la mexica.</p>
       </div>
       <div class="card">
+        <img class="intro-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Teotihuac%C3%A1n%2C_M%C3%A9xico%2C_2013-10-13%2C_DD_78.JPG/640px-Teotihuac%C3%A1n%2C_M%C3%A9xico%2C_2013-10-13%2C_DD_78.JPG" alt="Zona arqueol&oacute;gica de Teotihuac&aacute;n" />
         <h3>Datos clave</h3>
         <ul>
           <li><strong>Ubicaci&oacute;n:</strong> 50 km al noreste de la Ciudad de M&eacute;xico, Estado de M&eacute;xico</li>
@@ -463,9 +479,12 @@
         <p>Tambi&eacute;n conocido como el Templo de la Serpiente Emplumada. Decorado con impresionantes esculturas de serpientes y caracoles marinos. Es la estructura m&aacute;s ornamentada del sitio.</p>
       </div>
     </div>
-    <div class="card" style="margin-top:24px">
-      <h3>La Calzada de los Muertos</h3>
-      <p>La avenida principal de Teotihuac&aacute;n mide aproximadamente <strong>2.5 kil&oacute;metros de largo</strong> y 40 metros de ancho. Conectaba las principales plazas y templos de la ciudad. Los aztecas la nombraron as&iacute; porque cre&iacute;an que los mont&iacute;culos a sus lados eran tumbas de reyes.</p>
+    <div class="card" style="margin-top:24px; display:flex; gap:24px; align-items:center; flex-wrap:wrap;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Calzada_de_los_muertos._Teotihuac%C3%A1n%2C_M%C3%A9xico..jpg/640px-Calzada_de_los_muertos._Teotihuac%C3%A1n%2C_M%C3%A9xico..jpg" alt="Calzada de los Muertos" style="width:280px; height:180px; object-fit:cover; border-radius:12px; flex-shrink:0;" />
+      <div>
+        <h3>La Calzada de los Muertos</h3>
+        <p>La avenida principal de Teotihuac&aacute;n mide aproximadamente <strong>2.5 kil&oacute;metros de largo</strong> y 40 metros de ancho. Conectaba las principales plazas y templos de la ciudad. Los aztecas la nombraron as&iacute; porque cre&iacute;an que los mont&iacute;culos a sus lados eran tumbas de reyes.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -479,6 +498,7 @@
     </div>
     <div class="grid-2">
       <div class="card">
+        <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Teotihuac%C3%A1n_-_Palast_des_Quetzalpapalotl_5.jpg/640px-Teotihuac%C3%A1n_-_Palast_des_Quetzalpapalotl_5.jpg" alt="Palacio de Quetzalpap&aacute;lotl - organizaci&oacute;n social" />
         <h3>Organizaci&oacute;n social</h3>
         <p>La sociedad teotihuacana estaba organizada jer&aacute;rquicamente:</p>
         <ul>
@@ -490,6 +510,7 @@
         </ul>
       </div>
       <div class="card">
+        <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Temple_of_the_Feathered_Serpent%2C_Teotihuacan.jpg/640px-Temple_of_the_Feathered_Serpent%2C_Teotihuacan.jpg" alt="Templo de la Serpiente Emplumada - religi&oacute;n" />
         <h3>Religi&oacute;n polite&iacute;sta</h3>
         <p>La religi&oacute;n era el centro de la vida teotihuacana. Cre&iacute;an en m&uacute;ltiples dioses relacionados con la naturaleza:</p>
         <ul>
@@ -501,10 +522,12 @@
         <p style="margin-top:10px">Realizaban ceremonias, ofrendas y rituales para pedir buenas cosechas, lluvia y protecci&oacute;n.</p>
       </div>
       <div class="card">
+        <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Obsidienne_%28Mexique%29.jpg/640px-Obsidienne_%28Mexique%29.jpg" alt="Obsidiana de M&eacute;xico - econom&iacute;a" />
         <h3>Econom&iacute;a</h3>
         <p>Su econom&iacute;a se basaba en la <strong>agricultura</strong> (ma&iacute;z, frijol, calabaza) y el <strong>comercio de obsidiana</strong>, un vidrio volc&aacute;nico muy valorado para fabricar herramientas, armas y objetos rituales. Teotihuac&aacute;n controlaba los principales yacimientos de obsidiana de la regi&oacute;n.</p>
       </div>
       <div class="card">
+        <img class="card-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Teotihuac%C3%A1n_-_Jaguarpalast_Wandmalerei_1.jpg/640px-Teotihuac%C3%A1n_-_Jaguarpalast_Wandmalerei_1.jpg" alt="Mural del Jaguar - arte teotihuacano" />
         <h3>Arte y cultura</h3>
         <p>Los teotihuacanos destacaron por su <strong>pintura mural</strong>, con escenas religiosas y de la naturaleza en colores vivos. Tambi&eacute;n desarrollaron cer&aacute;mica elaborada, m&aacute;scaras de piedra verde y un estilo arquitect&oacute;nico conocido como <strong>talud-tablero</strong> que influy&oacute; en toda Mesoam&eacute;rica.</p>
       </div>

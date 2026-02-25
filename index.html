@@ -1,168 +1,858 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teoría Teotihuacana</title>
+  <title>Cultura Teotihuacana</title>
   <style>
-    :root{--prim:#2c3e50;--sec:#e67e22;--bg:#f5f7fa;--card:#ffffff}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Arial, Helvetica, sans-serif;background:var(--bg);color:#222}
-    header{background:linear-gradient(120deg,#2c3e50,#34495e);color:#fff;padding:18px 16px;position:sticky;top:0;z-index:10}
-    .wrap{max-width:1100px;margin:auto}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand h1{font-size:22px;margin:0}
-    nav{margin-top:10px;display:flex;flex-wrap:wrap;gap:10px}
-    nav a{color:#fff;text-decoration:none;padding:8px 10px;border-radius:8px}
-    nav a:hover{background:rgba(255,255,255,.15)}
-    .hero{background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Teotihuacan_Pyramid_of_the_Sun.jpg/1280px-Teotihuacan_Pyramid_of_the_Sun.jpg') center/cover no-repeat;min-height:300px;display:flex;align-items:end}
-    .hero .overlay{background:linear-gradient(transparent, rgba(0,0,0,.65));width:100%;padding:24px}
-    .hero h2{color:#fff;margin:0 0 6px 0}
-    .hero p{color:#eee;margin:0}
-    section{padding:28px 16px}
-    .card{background:var(--card);border-radius:16px;padding:18px;box-shadow:0 10px 20px rgba(0,0,0,.08);margin-bottom:18px}
-    h3{margin-top:0;color:var(--prim)}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-    .timeline{border-left:4px solid var(--sec);padding-left:14px}
-    .tl-item{margin-bottom:12px}
-    .gallery img{width:100%;border-radius:14px}
-    .quiz button{background:var(--sec);border:none;color:#fff;padding:10px 14px;border-radius:10px;cursor:pointer}
-    footer{background:#1f2a36;color:#cfd8e3;padding:16px}
-    .qr{display:flex;flex-direction:column;align-items:center;gap:10px}
-    .badge{background:#eef3f7;border-radius:12px;padding:10px}
-    @media (max-width:600px){.brand h1{font-size:18px}}
+    :root {
+      --prim: #5c3317;
+      --prim-dark: #3e2a1b;
+      --accent: #c9882b;
+      --accent-light: #e8c77b;
+      --bg: #faf6f0;
+      --card: #ffffff;
+      --text: #2b2017;
+      --text-light: #6b5d52;
+      --radius: 16px;
+      --shadow: 0 8px 30px rgba(92,51,23,.10);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    .topnav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--prim-dark);
+      backdrop-filter: blur(10px);
+      padding: 0 20px;
+      display: flex; align-items: center; justify-content: center;
+      gap: 6px; flex-wrap: wrap;
+      box-shadow: 0 2px 12px rgba(0,0,0,.25);
+    }
+    .topnav a {
+      color: #e8d5c0; text-decoration: none;
+      padding: 14px 14px; font-size: 14px; font-weight: 600;
+      letter-spacing: .3px; transition: color .2s, background .2s;
+      border-radius: 6px;
+    }
+    .topnav a:hover, .topnav a:focus {
+      color: #fff; background: rgba(255,255,255,.1);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex; align-items: flex-end;
+      background:
+        linear-gradient(to bottom, rgba(62,42,27,.15) 0%, rgba(62,42,27,.75) 100%),
+        url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Teotihuacan_Pyramid_of_the_Sun.jpg/1280px-Teotihuacan_Pyramid_of_the_Sun.jpg')
+        center / cover no-repeat;
+    }
+    .hero-content {
+      max-width: 900px; margin: auto;
+      padding: 60px 24px 50px;
+      color: #fff;
+    }
+    .hero-content .tag {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 13px; font-weight: 700;
+      padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 16px; letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+    .hero-content h1 {
+      font-size: clamp(32px, 6vw, 56px);
+      line-height: 1.15;
+      margin-bottom: 14px;
+      text-shadow: 0 2px 20px rgba(0,0,0,.4);
+    }
+    .hero-content p {
+      font-size: clamp(16px, 2.5vw, 20px);
+      max-width: 640px;
+      opacity: .92;
+      text-shadow: 0 1px 8px rgba(0,0,0,.3);
+    }
+
+    /* ── LAYOUT ── */
+    .wrap { max-width: 1000px; margin: auto; padding: 0 20px; }
+
+    section { padding: 60px 0; }
+    section:nth-child(even) { background: #f2ece3; }
+
+    .section-title {
+      text-align: center; margin-bottom: 40px;
+    }
+    .section-title h2 {
+      font-size: 32px; color: var(--prim);
+      position: relative; display: inline-block;
+    }
+    .section-title h2::after {
+      content: '';
+      display: block; width: 50px; height: 4px;
+      background: var(--accent); border-radius: 2px;
+      margin: 10px auto 0;
+    }
+    .section-title p {
+      color: var(--text-light); margin-top: 8px;
+      font-size: 16px; max-width: 600px; margin-left: auto; margin-right: auto;
+    }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(92,51,23,.15);
+    }
+    .card h3 {
+      color: var(--prim); font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .card p, .card li {
+      color: var(--text-light); font-size: 15px;
+    }
+    .card ul { padding-left: 20px; }
+    .card li { margin-bottom: 4px; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    /* ── INTRO ── */
+    .intro-highlight {
+      font-size: 18px;
+      color: var(--prim);
+      font-weight: 600;
+      border-left: 4px solid var(--accent);
+      padding-left: 16px;
+      margin-bottom: 16px;
+    }
+
+    /* ── PYRAMIDS ── */
+    .pyramid-card {
+      text-align: center;
+    }
+    .pyramid-card img {
+      width: 100%; height: 200px;
+      object-fit: cover; border-radius: 12px;
+      margin-bottom: 14px;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline {
+      position: relative;
+      padding-left: 40px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 14px; top: 0; bottom: 0;
+      width: 4px; background: var(--accent);
+      border-radius: 2px;
+    }
+    .tl-item {
+      position: relative;
+      margin-bottom: 32px;
+      padding: 20px 24px;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -34px; top: 24px;
+      width: 16px; height: 16px;
+      background: var(--accent);
+      border: 4px solid var(--bg);
+      border-radius: 50%;
+    }
+    .tl-item .year {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff; font-weight: 700;
+      padding: 3px 12px; border-radius: 20px;
+      font-size: 14px; margin-bottom: 8px;
+    }
+    .tl-item h4 {
+      color: var(--prim); margin-bottom: 4px;
+    }
+    .tl-item p {
+      color: var(--text-light); font-size: 14px; margin: 0;
+    }
+
+    /* ── GALLERY ── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .gallery-item {
+      position: relative; overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%; height: 220px;
+      object-fit: cover;
+      transition: transform .4s;
+      display: block;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+    .gallery-item .caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(62,42,27,.85));
+      color: #fff; padding: 30px 14px 12px;
+      font-size: 13px; font-weight: 600;
+    }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.9);
+      z-index: 200;
+      align-items: center; justify-content: center;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90%; max-height: 85vh;
+      border-radius: 12px;
+      box-shadow: 0 0 40px rgba(0,0,0,.5);
+    }
+    .lightbox-close {
+      position: absolute; top: 20px; right: 24px;
+      background: none; border: none;
+      color: #fff; font-size: 36px;
+      cursor: pointer; line-height: 1;
+    }
+
+    /* ── QUIZ ── */
+    .quiz-container {
+      max-width: 640px; margin: auto;
+    }
+    .quiz-progress {
+      display: flex; gap: 6px;
+      margin-bottom: 24px; justify-content: center;
+    }
+    .quiz-progress .dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: #d9cfc4;
+      transition: background .3s;
+    }
+    .quiz-progress .dot.active { background: var(--accent); }
+    .quiz-progress .dot.correct { background: #27ae60; }
+    .quiz-progress .dot.wrong { background: #c0392b; }
+
+    .quiz-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .quiz-card .q-number {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff; font-weight: 700;
+      padding: 4px 14px; border-radius: 20px;
+      font-size: 13px; margin-bottom: 14px;
+    }
+    .quiz-card h3 {
+      color: var(--prim); font-size: 20px;
+      margin-bottom: 20px;
+    }
+    .quiz-options {
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .quiz-option {
+      background: #f7f2eb;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: all .2s;
+      color: var(--text);
+      font-family: inherit;
+      text-align: left;
+    }
+    .quiz-option:hover:not(:disabled) {
+      border-color: var(--accent);
+      background: #fdf6ec;
+    }
+    .quiz-option.correct {
+      background: #d4edda; border-color: #27ae60; color: #155724;
+    }
+    .quiz-option.wrong {
+      background: #f8d7da; border-color: #c0392b; color: #721c24;
+    }
+    .quiz-option:disabled {
+      cursor: default; opacity: .8;
+    }
+    .quiz-feedback {
+      margin-top: 16px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 15px;
+      display: none;
+    }
+    .quiz-feedback.show { display: block; }
+    .quiz-feedback.correct-fb { background: #d4edda; color: #155724; }
+    .quiz-feedback.wrong-fb { background: #f8d7da; color: #721c24; }
+    .quiz-next {
+      margin-top: 18px;
+      background: var(--accent);
+      color: #fff; font-weight: 700;
+      border: none; border-radius: 10px;
+      padding: 12px 28px; font-size: 15px;
+      cursor: pointer; display: none;
+      font-family: inherit;
+      transition: background .2s;
+    }
+    .quiz-next:hover { background: #b47a24; }
+
+    .quiz-results {
+      text-align: center;
+      display: none;
+    }
+    .quiz-results .score-circle {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 36px; font-weight: 800;
+      color: #fff;
+    }
+    .quiz-results .score-circle.good { background: #27ae60; }
+    .quiz-results .score-circle.ok { background: var(--accent); }
+    .quiz-results .score-circle.low { background: #c0392b; }
+    .quiz-results h3 { margin-bottom: 10px; }
+    .quiz-results p { color: var(--text-light); margin-bottom: 20px; }
+    .quiz-restart {
+      background: var(--prim);
+      color: #fff; font-weight: 700;
+      border: none; border-radius: 10px;
+      padding: 12px 28px; font-size: 15px;
+      cursor: pointer; font-family: inherit;
+      transition: background .2s;
+    }
+    .quiz-restart:hover { background: var(--prim-dark); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--prim-dark);
+      color: #c7b8a8; text-align: center;
+      padding: 28px 20px;
+      font-size: 14px;
+    }
+    footer strong { color: #fff; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .topnav { gap: 2px; padding: 8px 10px; }
+      .topnav a { padding: 10px 8px; font-size: 12px; }
+      .hero { min-height: 60vh; }
+      section { padding: 40px 0; }
+      .section-title h2 { font-size: 26px; }
+      .gallery-item img { height: 160px; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <div class="brand">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Teotihuacan_mural.svg/120px-Teotihuacan_mural.svg.png" alt="icono" width="36" height="36"/>
-        <h1>La Teoría Teotihuacana</h1>
-      </div>
-      <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#contexto">Contexto</a>
-        <a href="#ciudad">Ciudad</a>
-        <a href="#sociedad">Sociedad y Religión</a>
-        <a href="#aportes">Aportes</a>
-        <a href="#tiempo">Línea del tiempo</a>
-        <a href="#galeria">Galería</a>
-        <a href="#qr">Código QR</a>
-        <a href="#quiz">Mini‑quiz</a>
-      </nav>
+
+<!-- NAV -->
+<nav class="topnav">
+  <a href="#inicio">Inicio</a>
+  <a href="#explicacion">Explicaci&oacute;n</a>
+  <a href="#piramides">Pir&aacute;mides</a>
+  <a href="#sociedad">Sociedad</a>
+  <a href="#timeline">Cronolog&iacute;a</a>
+  <a href="#galeria">Galer&iacute;a</a>
+  <a href="#quiz">Quiz</a>
+</nav>
+
+<!-- HERO -->
+<section id="inicio" class="hero">
+  <div class="hero-content">
+    <span class="tag">Mesoam&eacute;rica &bull; 100 a.C. &ndash; 650 d.C.</span>
+    <h1>Cultura Teotihuacana</h1>
+    <p>La ciudad donde los hombres se convierten en dioses &mdash; una de las civilizaciones m&aacute;s influyentes del mundo antiguo.</p>
+  </div>
+</section>
+
+<!-- EXPLICACION -->
+<section id="explicacion">
+  <div class="wrap">
+    <div class="section-title">
+      <h2>&iquest;Qu&eacute; fue la cultura teotihuacana?</h2>
+      <p>Una civilizaci&oacute;n que marc&oacute; la historia de M&eacute;xico y Mesoam&eacute;rica</p>
     </div>
-  </header>  <div id="inicio" class="hero">
-    <div class="overlay wrap">
-      <h2>Teotihuacán: la ciudad donde los hombres se convierten en dioses</h2>
-      <p>Ubicada en el actual Estado de México, fue una de las civilizaciones más importantes de Mesoamérica (100 a.C. – 650 d.C.).</p>
-    </div>
-  </div>  <section id="contexto">
-    <div class="wrap grid">
+    <div class="grid-2">
       <div class="card">
-        <h3>¿Qué es la teoría teotihuacana?</h3>
-        <p>Se refiere al estudio y explicación histórica y cultural de la civilización que habitó la ciudad de Teotihuacán. Analiza su origen, organización social, religión, arquitectura y su influencia en otras culturas mesoamericanas.</p>
+        <p class="intro-highlight">Teotihuac&aacute;n significa &ldquo;el lugar donde nacen los dioses&rdquo; en n&aacute;huatl.</p>
+        <p>La cultura teotihuacana se desarroll&oacute; entre los a&ntilde;os 100 a.C. y 650 d.C. en el Valle de M&eacute;xico. Su ciudad principal, Teotihuac&aacute;n, lleg&oacute; a tener m&aacute;s de <strong>100,000 habitantes</strong>, convirti&eacute;ndose en una de las urbes m&aacute;s grandes del mundo antiguo.</p>
+        <p style="margin-top:10px">Fue un centro pol&iacute;tico, econ&oacute;mico y religioso que influy&oacute; en culturas como la maya, zapoteca y posteriormente la mexica.</p>
       </div>
       <div class="card">
-        <h3>Ubicación</h3>
-        <p>Teotihuacán se encuentra a unos 40 km al noreste de la actual Ciudad de México. Fue una de las ciudades más grandes del mundo antiguo con más de 100,000 habitantes.</p>
-      </div>
-    </div>
-  </section>  <section id="ciudad">
-    <div class="wrap grid">
-      <div class="card">
-        <h3>La Calzada de los Muertos</h3>
-        <p>Avenida principal que organizaba la ciudad. Conectaba los principales templos y plazas ceremoniales.</p>
-      </div>
-      <div class="card">
-        <h3>Pirámide del Sol</h3>
-        <p>Una de las pirámides más grandes de América. Asociada al culto solar y a ceremonias religiosas.</p>
-      </div>
-      <div class="card">
-        <h3>Pirámide de la Luna</h3>
-        <p>Ubicada al final de la calzada. Posiblemente dedicada a deidades relacionadas con la fertilidad y el agua.</p>
-      </div>
-      <div class="card">
-        <h3>Templo de Quetzalcóatl</h3>
-        <p>Conocido también como el Templo de la Serpiente Emplumada. Decorado con esculturas de serpientes y caracoles marinos.</p>
-      </div>
-    </div>
-  </section>  <section id="sociedad">
-    <div class="wrap grid">
-      <div class="card">
-        <h3>Organización social</h3>
+        <h3>Datos clave</h3>
         <ul>
-          <li>Sacerdotes (grupo dominante)</li>
-          <li>Guerreros</li>
-          <li>Artesanos</li>
-          <li>Comerciantes</li>
-          <li>Agricultores</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Religión</h3>
-        <p>Era politeísta. Adoraban a dioses como:</p>
-        <ul>
-          <li>Quetzalcóatl (serpiente emplumada)</li>
-          <li>Tláloc (dios de la lluvia)</li>
-          <li>Huehuetéotl (dios del fuego)</li>
+          <li><strong>Ubicaci&oacute;n:</strong> 50 km al noreste de la Ciudad de M&eacute;xico, Estado de M&eacute;xico</li>
+          <li><strong>Per&iacute;odo:</strong> 100 a.C. &ndash; 650 d.C. (Cl&aacute;sico mesoamericano)</li>
+          <li><strong>Extensi&oacute;n:</strong> Aproximadamente 20 km&sup2;</li>
+          <li><strong>Poblaci&oacute;n m&aacute;xima:</strong> M&aacute;s de 100,000 habitantes</li>
+          <li><strong>Econom&iacute;a:</strong> Agricultura, comercio de obsidiana y cer&aacute;mica</li>
+          <li><strong>Patrimonio:</strong> Patrimonio de la Humanidad por la UNESCO desde 1987</li>
         </ul>
       </div>
     </div>
-  </section>  <section id="aportes">
-    <div class="wrap grid">
+  </div>
+</section>
+
+<!-- PIRAMIDES -->
+<section id="piramides">
+  <div class="wrap">
+    <div class="section-title">
+      <h2>Las grandes pir&aacute;mides</h2>
+      <p>Monumentales construcciones que a&uacute;n asombran al mundo</p>
+    </div>
+    <div class="grid-3">
+      <div class="card pyramid-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Teotihuacan_Pyramid_of_the_Sun.jpg/640px-Teotihuacan_Pyramid_of_the_Sun.jpg" alt="Pir&aacute;mide del Sol" />
+        <h3>Pir&aacute;mide del Sol</h3>
+        <p>Con 65 metros de altura, es la tercera pir&aacute;mide m&aacute;s grande del mundo. Fue construida sobre una cueva natural que los teotihuacanos consideraban sagrada. Asociada a ceremonias del culto solar.</p>
+      </div>
+      <div class="card pyramid-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Teotihuacan_Pyramid_of_the_Moon.jpg/640px-Teotihuacan_Pyramid_of_the_Moon.jpg" alt="Pir&aacute;mide de la Luna" />
+        <h3>Pir&aacute;mide de la Luna</h3>
+        <p>Ubicada al final de la Calzada de los Muertos, mide 43 metros de altura. Se han encontrado ofrendas con restos humanos y animales. Dedicada a deidades de la fertilidad y el agua.</p>
+      </div>
+      <div class="card pyramid-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Temple_of_the_Feathered_Serpent%2C_Teotihuacan.jpg/640px-Temple_of_the_Feathered_Serpent%2C_Teotihuacan.jpg" alt="Templo de Quetzalc&oacute;atl" />
+        <h3>Templo de Quetzalc&oacute;atl</h3>
+        <p>Tambi&eacute;n conocido como el Templo de la Serpiente Emplumada. Decorado con impresionantes esculturas de serpientes y caracoles marinos. Es la estructura m&aacute;s ornamentada del sitio.</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:24px">
+      <h3>La Calzada de los Muertos</h3>
+      <p>La avenida principal de Teotihuac&aacute;n mide aproximadamente <strong>2.5 kil&oacute;metros de largo</strong> y 40 metros de ancho. Conectaba las principales plazas y templos de la ciudad. Los aztecas la nombraron as&iacute; porque cre&iacute;an que los mont&iacute;culos a sus lados eran tumbas de reyes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIEDAD Y RELIGION -->
+<section id="sociedad">
+  <div class="wrap">
+    <div class="section-title">
+      <h2>Sociedad y religi&oacute;n</h2>
+      <p>C&oacute;mo se organizaba la vida en la gran ciudad</p>
+    </div>
+    <div class="grid-2">
       <div class="card">
-        <h3>Aportes culturales</h3>
+        <h3>Organizaci&oacute;n social</h3>
+        <p>La sociedad teotihuacana estaba organizada jer&aacute;rquicamente:</p>
         <ul>
-          <li>Urbanismo planificado</li>
-          <li>Arquitectura monumental</li>
-          <li>Pintura mural</li>
-          <li>Comercio regional</li>
-          <li>Influencia en mayas y mexicas</li>
+          <li><strong>Sacerdotes y gobernantes:</strong> Dirig&iacute;an la vida pol&iacute;tica y religiosa</li>
+          <li><strong>Guerreros:</strong> Defend&iacute;an la ciudad y expand&iacute;an su influencia</li>
+          <li><strong>Comerciantes:</strong> Controlaban las rutas de intercambio de obsidiana y cer&aacute;mica</li>
+          <li><strong>Artesanos:</strong> Creaban murales, cer&aacute;mica y objetos de obsidiana</li>
+          <li><strong>Agricultores:</strong> Cultivaban ma&iacute;z, frijol, calabaza y chile</li>
         </ul>
       </div>
       <div class="card">
-        <h3>Economía</h3>
-        <p>Basada en la agricultura (maíz, frijol y calabaza) y en el comercio de obsidiana, que era muy valiosa para fabricar herramientas y armas.</p>
+        <h3>Religi&oacute;n polite&iacute;sta</h3>
+        <p>La religi&oacute;n era el centro de la vida teotihuacana. Cre&iacute;an en m&uacute;ltiples dioses relacionados con la naturaleza:</p>
+        <ul>
+          <li><strong>Quetzalc&oacute;atl:</strong> La serpiente emplumada, dios del viento y la sabidur&iacute;a</li>
+          <li><strong>Tl&aacute;loc:</strong> Dios de la lluvia, fundamental para la agricultura</li>
+          <li><strong>Huehuet&eacute;otl:</strong> Dios del fuego, uno de los m&aacute;s antiguos</li>
+          <li><strong>Chalchiuhtlicue:</strong> Diosa del agua, r&iacute;os y lagos</li>
+        </ul>
+        <p style="margin-top:10px">Realizaban ceremonias, ofrendas y rituales para pedir buenas cosechas, lluvia y protecci&oacute;n.</p>
+      </div>
+      <div class="card">
+        <h3>Econom&iacute;a</h3>
+        <p>Su econom&iacute;a se basaba en la <strong>agricultura</strong> (ma&iacute;z, frijol, calabaza) y el <strong>comercio de obsidiana</strong>, un vidrio volc&aacute;nico muy valorado para fabricar herramientas, armas y objetos rituales. Teotihuac&aacute;n controlaba los principales yacimientos de obsidiana de la regi&oacute;n.</p>
+      </div>
+      <div class="card">
+        <h3>Arte y cultura</h3>
+        <p>Los teotihuacanos destacaron por su <strong>pintura mural</strong>, con escenas religiosas y de la naturaleza en colores vivos. Tambi&eacute;n desarrollaron cer&aacute;mica elaborada, m&aacute;scaras de piedra verde y un estilo arquitect&oacute;nico conocido como <strong>talud-tablero</strong> que influy&oacute; en toda Mesoam&eacute;rica.</p>
       </div>
     </div>
-  </section>  <section id="tiempo">
-    <div class="wrap card">
-      <h3>Línea del tiempo</h3>
-      <div class="timeline">
-        <div class="tl-item"><strong>100 a.C.</strong> – Fundación de la ciudad</div>
-        <div class="tl-item"><strong>200 d.C.</strong> – Gran crecimiento urbano</div>
-        <div class="tl-item"><strong>400 d.C.</strong> – Máximo esplendor</div>
-        <div class="tl-item"><strong>650 d.C.</strong> – Decadencia y abandono</div>
+  </div>
+</section>
+
+<!-- LINEA DEL TIEMPO -->
+<section id="timeline">
+  <div class="wrap">
+    <div class="section-title">
+      <h2>L&iacute;nea del tiempo</h2>
+      <p>Los momentos clave de la civilizaci&oacute;n teotihuacana</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <span class="year">150 a.C.</span>
+        <h4>Fundaci&oacute;n</h4>
+        <p>Primeros asentamientos en el valle. Comienza la construcci&oacute;n de las primeras estructuras ceremoniales.</p>
+      </div>
+      <div class="tl-item">
+        <span class="year">1 &ndash; 100 d.C.</span>
+        <h4>Construcci&oacute;n de la Pir&aacute;mide del Sol</h4>
+        <p>Se edifica la pir&aacute;mide m&aacute;s grande de la ciudad y se traza la Calzada de los Muertos.</p>
+      </div>
+      <div class="tl-item">
+        <span class="year">100 &ndash; 250 d.C.</span>
+        <h4>Expansi&oacute;n urbana</h4>
+        <p>La poblaci&oacute;n crece r&aacute;pidamente. Se construye la Pir&aacute;mide de la Luna y el Templo de Quetzalc&oacute;atl.</p>
+      </div>
+      <div class="tl-item">
+        <span class="year">250 &ndash; 450 d.C.</span>
+        <h4>M&aacute;ximo esplendor</h4>
+        <p>Teotihuac&aacute;n alcanza los 100,000 habitantes. Su influencia se extiende hasta Guatemala, Oaxaca y el Golfo de M&eacute;xico.</p>
+      </div>
+      <div class="tl-item">
+        <span class="year">450 &ndash; 550 d.C.</span>
+        <h4>Inicio del declive</h4>
+        <p>Comienzan conflictos internos y problemas de recursos. La ciudad empieza a perder poder regional.</p>
+      </div>
+      <div class="tl-item">
+        <span class="year">~650 d.C.</span>
+        <h4>Ca&iacute;da y abandono</h4>
+        <p>La ciudad es incendiada y abandonada. Las causas exactas a&uacute;n se debaten: posibles revueltas internas, invasiones o cambios clim&aacute;ticos.</p>
+      </div>
+      <div class="tl-item">
+        <span class="year">1987</span>
+        <h4>Patrimonio de la Humanidad</h4>
+        <p>La UNESCO declara a Teotihuac&aacute;n como Patrimonio Cultural de la Humanidad.</p>
       </div>
     </div>
-  </section>  <section id="galeria">
-    <div class="wrap grid gallery">
-      <div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Teotihuacan_Pyramid_of_the_Moon.jpg/1280px-Teotihuacan_Pyramid_of_the_Moon.jpg" alt="Piramide Luna"></div>
-      <div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Temple_of_the_Feathered_Serpent%2C_Teotihuacan.jpg/1280px-Temple_of_the_Feathered_Serpent%2C_Teotihuacan.jpg" alt="Templo Quetzalcoatl"></div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria">
+  <div class="wrap">
+    <div class="section-title">
+      <h2>Galer&iacute;a</h2>
+      <p>Im&aacute;genes de la gran ciudad prehisp&aacute;nica</p>
     </div>
-  </section>  <section id="qr">
-    <div class="wrap card qr">
-      <h3>Acceso por Código QR</h3>
-      <p>Cuando publiques esta página en internet, genera un código QR con el enlace y colócalo aquí para que tus compañeros puedan escanearlo con su celular.</p>
-      <div class="badge">
-        <p><strong>Aquí irá tu imagen QR</strong></p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/QR_code_example.svg/240px-QR_code_example.svg.png" alt="QR de ejemplo" width="180">
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Teotihuacan_Pyramid_of_the_Sun.jpg/640px-Teotihuacan_Pyramid_of_the_Sun.jpg" alt="Pir&aacute;mide del Sol" />
+        <div class="caption">Pir&aacute;mide del Sol</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Teotihuacan_Pyramid_of_the_Moon.jpg/640px-Teotihuacan_Pyramid_of_the_Moon.jpg" alt="Pir&aacute;mide de la Luna" />
+        <div class="caption">Pir&aacute;mide de la Luna</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Temple_of_the_Feathered_Serpent%2C_Teotihuacan.jpg/640px-Temple_of_the_Feathered_Serpent%2C_Teotihuacan.jpg" alt="Templo de la Serpiente Emplumada" />
+        <div class="caption">Templo de la Serpiente Emplumada</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Calzada_de_los_muertos._Teotihuac%C3%A1n%2C_M%C3%A9xico..jpg/640px-Calzada_de_los_muertos._Teotihuac%C3%A1n%2C_M%C3%A9xico..jpg" alt="Calzada de los Muertos" />
+        <div class="caption">Calzada de los Muertos</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Teotihuac%C3%A1n_-_Palast_des_Quetzalpapalotl_2.jpg/640px-Teotihuac%C3%A1n_-_Palast_des_Quetzalpapalotl_2.jpg" alt="Palacio de Quetzalpap&aacute;lotl" />
+        <div class="caption">Palacio de Quetzalpap&aacute;lotl</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Teotihuac%C3%A1n_-_Jaguarpalast_Wandmalerei_1.jpg/640px-Teotihuac%C3%A1n_-_Jaguarpalast_Wandmalerei_1.jpg" alt="Mural del Jaguar" />
+        <div class="caption">Mural del Jaguar</div>
       </div>
     </div>
-  </section>  <section id="quiz">
-    <div class="wrap card quiz">
-      <h3>Mini‑quiz</h3>
-      <p>¿Qué dios estaba representado por la serpiente emplumada?</p>
-      <button onclick="alert('¡Correcto! Es Quetzalcóatl')">Quetzalcóatl</button>
-      <button onclick="alert('Inténtalo otra vez')">Huitzilopochtli</button>
-      <button onclick="alert('Inténtalo otra vez')">Tezcatlipoca</button>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+  <img id="lightbox-img" src="" alt="" />
+</div>
+
+<!-- QUIZ -->
+<section id="quiz">
+  <div class="wrap">
+    <div class="section-title">
+      <h2>Mini-quiz interactivo</h2>
+      <p>&iexcl;Pon a prueba lo que aprendiste!</p>
     </div>
-  </section>  <footer>
-    <div class="wrap">
-      <p>Proyecto escolar – Historia de Mesoamérica</p>
-      <p>Autor: __________________________</p>
-      <p>Grupo: __________  Materia: __________</p>
+    <div class="quiz-container">
+      <div class="quiz-progress" id="quizProgress"></div>
+      <div class="quiz-card" id="quizCard">
+        <span class="q-number" id="qNumber"></span>
+        <h3 id="qText"></h3>
+        <div class="quiz-options" id="qOptions"></div>
+        <div class="quiz-feedback" id="qFeedback"></div>
+        <button class="quiz-next" id="qNext" onclick="nextQuestion()">Siguiente pregunta</button>
+      </div>
+      <div class="quiz-results" id="quizResults">
+        <div class="score-circle" id="scoreCircle"></div>
+        <h3 id="resultTitle"></h3>
+        <p id="resultMsg"></p>
+        <button class="quiz-restart" onclick="restartQuiz()">Intentar de nuevo</button>
+      </div>
     </div>
-  </footer>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Cultura Teotihuacana</strong> &mdash; Proyecto escolar &bull; Historia de Mesoam&eacute;rica</p>
+</footer>
+
+<script>
+// ── LIGHTBOX ──
+function openLightbox(el) {
+  var img = el.querySelector('img');
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightbox-img');
+  lbImg.src = img.src.replace('/640px-', '/1280px-');
+  lbImg.alt = img.alt;
+  lb.classList.add('active');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+
+// ── QUIZ ──
+var quizData = [
+  {
+    q: '¿Qué significa "Teotihuacán" en náhuatl?',
+    opts: [
+      'La ciudad de los guerreros',
+      'El lugar donde nacen los dioses',
+      'La tierra del maíz sagrado',
+      'El valle de las pirámides'
+    ],
+    correct: 1,
+    explanation: '"Teotihuacán" significa "el lugar donde nacen los dioses", nombre dado por los mexicas.'
+  },
+  {
+    q: '¿Cuál es la pirámide más grande de Teotihuacán?',
+    opts: [
+      'Pirámide de la Luna',
+      'Templo de Quetzalcóatl',
+      'Pirámide del Sol',
+      'Templo de Tláloc'
+    ],
+    correct: 2,
+    explanation: 'La Pirámide del Sol mide 65 metros de altura y es la tercera pirámide más grande del mundo.'
+  },
+  {
+    q: '¿Qué dios estaba representado por la serpiente emplumada?',
+    opts: [
+      'Tláloc',
+      'Huehuetéotl',
+      'Chalchiuhtlicue',
+      'Quetzalcóatl'
+    ],
+    correct: 3,
+    explanation: 'Quetzalcóatl, la serpiente emplumada, era el dios del viento y la sabiduría.'
+  },
+  {
+    q: '¿Cuál era el material volcánico más comercializado por los teotihuacanos?',
+    opts: [
+      'Jade',
+      'Obsidiana',
+      'Turquesa',
+      'Ámbar'
+    ],
+    correct: 1,
+    explanation: 'La obsidiana era un vidrio volcánico muy valorado para herramientas, armas y objetos rituales.'
+  },
+  {
+    q: '¿Aproximadamente cuántos habitantes tuvo Teotihuacán en su apogeo?',
+    opts: [
+      '10,000',
+      '50,000',
+      '100,000',
+      '500,000'
+    ],
+    correct: 2,
+    explanation: 'En su máximo esplendor, Teotihuacán llegó a tener más de 100,000 habitantes.'
+  },
+  {
+    q: '¿Cómo se llama la avenida principal de Teotihuacán?',
+    opts: [
+      'Camino de los Dioses',
+      'Avenida del Sol',
+      'Ruta Sagrada',
+      'Calzada de los Muertos'
+    ],
+    correct: 3,
+    explanation: 'La Calzada de los Muertos mide 2.5 km de largo y conectaba los principales templos.'
+  },
+  {
+    q: '¿En qué año la UNESCO declaró a Teotihuacán como Patrimonio de la Humanidad?',
+    opts: [
+      '1972',
+      '1987',
+      '1995',
+      '2001'
+    ],
+    correct: 1,
+    explanation: 'La UNESCO declaró a Teotihuacán como Patrimonio Cultural de la Humanidad en 1987.'
+  },
+  {
+    q: '¿Cuál fue aproximadamente el año de la caída de Teotihuacán?',
+    opts: [
+      '200 d.C.',
+      '450 d.C.',
+      '650 d.C.',
+      '900 d.C.'
+    ],
+    correct: 2,
+    explanation: 'Alrededor del 650 d.C. la ciudad fue incendiada y abandonada.'
+  }
+];
+
+var currentQ = 0;
+var score = 0;
+var answered = false;
+var results = new Array(quizData.length).fill(null);
+
+function initQuiz() {
+  var progress = document.getElementById('quizProgress');
+  progress.innerHTML = '';
+  for (var i = 0; i < quizData.length; i++) {
+    var dot = document.createElement('div');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.id = 'dot-' + i;
+    progress.appendChild(dot);
+  }
+  showQuestion();
+}
+
+function showQuestion() {
+  answered = false;
+  var data = quizData[currentQ];
+  document.getElementById('qNumber').textContent = 'Pregunta ' + (currentQ + 1) + ' de ' + quizData.length;
+  document.getElementById('qText').textContent = data.q;
+  var optContainer = document.getElementById('qOptions');
+  optContainer.innerHTML = '';
+  for (var i = 0; i < data.opts.length; i++) {
+    var btn = document.createElement('button');
+    btn.className = 'quiz-option';
+    btn.textContent = data.opts[i];
+    btn.setAttribute('data-index', i);
+    btn.onclick = function() { selectAnswer(parseInt(this.getAttribute('data-index'))); };
+    optContainer.appendChild(btn);
+  }
+  document.getElementById('qFeedback').className = 'quiz-feedback';
+  document.getElementById('qFeedback').style.display = 'none';
+  document.getElementById('qNext').style.display = 'none';
+  document.getElementById('quizCard').style.display = 'block';
+  document.getElementById('quizResults').style.display = 'none';
+}
+
+function selectAnswer(idx) {
+  if (answered) return;
+  answered = true;
+  var data = quizData[currentQ];
+  var btns = document.querySelectorAll('.quiz-option');
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].disabled = true;
+    if (i === data.correct) btns[i].classList.add('correct');
+    if (i === idx && idx !== data.correct) btns[i].classList.add('wrong');
+  }
+  var fb = document.getElementById('qFeedback');
+  if (idx === data.correct) {
+    score++;
+    results[currentQ] = 'correct';
+    fb.className = 'quiz-feedback show correct-fb';
+    fb.textContent = '¡Correcto! ' + data.explanation;
+  } else {
+    results[currentQ] = 'wrong';
+    fb.className = 'quiz-feedback show wrong-fb';
+    fb.textContent = 'Incorrecto. ' + data.explanation;
+  }
+  fb.style.display = 'block';
+  var dot = document.getElementById('dot-' + currentQ);
+  dot.classList.remove('active');
+  dot.classList.add(results[currentQ]);
+  if (currentQ < quizData.length - 1) {
+    document.getElementById('qNext').style.display = 'inline-block';
+    document.getElementById('qNext').textContent = 'Siguiente pregunta';
+  } else {
+    document.getElementById('qNext').style.display = 'inline-block';
+    document.getElementById('qNext').textContent = 'Ver resultados';
+  }
+}
+
+function nextQuestion() {
+  currentQ++;
+  if (currentQ >= quizData.length) {
+    showResults();
+    return;
+  }
+  var dot = document.getElementById('dot-' + currentQ);
+  dot.classList.add('active');
+  showQuestion();
+}
+
+function showResults() {
+  document.getElementById('quizCard').style.display = 'none';
+  var res = document.getElementById('quizResults');
+  res.style.display = 'block';
+  var circle = document.getElementById('scoreCircle');
+  circle.textContent = score + '/' + quizData.length;
+  var pct = (score / quizData.length) * 100;
+  if (pct >= 75) {
+    circle.className = 'score-circle good';
+    document.getElementById('resultTitle').textContent = '¡Excelente!';
+    document.getElementById('resultMsg').textContent = 'Dominas muy bien el tema de la cultura teotihuacana.';
+  } else if (pct >= 50) {
+    circle.className = 'score-circle ok';
+    document.getElementById('resultTitle').textContent = '¡Buen trabajo!';
+    document.getElementById('resultMsg').textContent = 'Tienes buenos conocimientos, pero puedes mejorar.';
+  } else {
+    circle.className = 'score-circle low';
+    document.getElementById('resultTitle').textContent = 'Sigue estudiando';
+    document.getElementById('resultMsg').textContent = 'Repasa la información e inténtalo de nuevo.';
+  }
+}
+
+function restartQuiz() {
+  currentQ = 0;
+  score = 0;
+  answered = false;
+  results = new Array(quizData.length).fill(null);
+  initQuiz();
+}
+
+initQuiz();
+</script>
+
 </body>
 </html>
